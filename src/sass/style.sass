@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap')
+
+$gray: #707070
+$blue: #0081FB
+$red: #FF5151
+
+*
+    margin: 0
+    padding: 0
+    font-family: 'Roboto', Arial, Helvetica, sans-serif
+    font-size: 26px
+    font-weight: 300
+    color: $gray
+
+body
+    background: #EFEFF4
+    display: flex
+    flex-direction: column
+
+a
+    transition: opacity 0.15s ease-in-out
+
+
+
+a:hover
+    opacity: 0.8
+
+.logo
+    margin: 22px auto 52px
+
+#num-of-gr
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin: 0 auto 75px
+input
+    box-sizing: border-box
+    padding: 18px
+    border: 1px solid $gray
+    border-radius: 8px
+    font-size: 20px
+    font-weight: 300
+    &::placeholder
+        opacity: 0.65
+
+#add-person-form
+    display: flex
+    flex-direction: column
+    margin: 0 auto 55px
+    input
+        min-width: 315px 
+    label
+        font-size: 20px
+        margin: 0 0 6px 
+.btn
+    background: $blue
+    font-size: 30px
+    color: white
+    margin: 24px auto 0
+    padding: 14px 0 
+    min-width: 315px 
+    text-align: center
+    border-radius: 8px
+
+#people
+    align-self: center
+    max-width: 600px
+    margin: 0 0 40px
+
+    div
+        max-width: 600px
+        min-width: 320px
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        margin: 0 5px 20px
+        .remove-btn
+            background: $red
+            color: white
+            border-radius: 13px
+            font-size: 14px
+            min-width: 68px
+            height: 26px
+            display: flex
+            align-items: center
+            justify-content: center
+    
+#generate-groups
+    display: flex
+    flex-direction: column
+
+#groups
+    list-style: none
+    margin: 55px auto 40px
+    max-width: 600px
+    min-width: 320px
+
+    li
+        height: auto
+        margin: 0 0 15px
+        div
+            display: flex
+            justify-content: space-between
+            align-items: center
+            a
+                background: #00BFFB
+                width: 68px
+                height: 26px
+                border-radius: 13px
+                display: flex
+                align-items: center
+                justify-content: center
+                img
+                    transform: rotate(180deg)
+                    transition: transform 0.4s
+        
+.group-parts
+    margin: 0 0 60px
+    display: block
+    list-style: none
+    li
+        text-align: right
+        margin: 10px 20px 15px 0 !important
+        display: block
+        opacity: 0.65
+            
+.clicked
+    transform: rotate(360deg) !important
+
+.visible
+    transform:translateY(0%)
+    display: none
+    li
+        display: none
+
+
+@media
