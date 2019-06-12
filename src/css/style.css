@@ -10,7 +10,8 @@
 body {
   background: #EFEFF4;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100vh; }
 
 a {
   transition: opacity 0.15s ease-in-out; }
@@ -53,7 +54,7 @@ input {
   font-size: 30px;
   color: white;
   margin: 24px auto 0;
-  padding: 14px 0;
+  padding: 12.5px 0;
   min-width: 315px;
   text-align: center;
   border-radius: 8px; }
@@ -125,3 +126,40 @@ input {
   display: none; }
   .visible li {
     display: none; }
+
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: auto 20% auto;
+    grid-template-rows: 20% 30% auto; }
+  .logo {
+    margin: 20px auto 0;
+    grid-column-start: 2; }
+  #add-person-form {
+    justify-self: end;
+    margin: 0 20px 0 0;
+    grid-column-start: 1;
+    grid-row-start: 2; }
+  #num-of-gr {
+    margin: 32px auto 0;
+    align-self: start;
+    grid-column-start: 2;
+    grid-row-start: 2; }
+  #generate-groups {
+    margin: 10px 0 0 65px;
+    justify-self: start;
+    grid-column-start: 3;
+    grid-row-start: 2; }
+  #groups {
+    justify-self: start;
+    align-self: start;
+    max-width: 500px;
+    margin: 0 0 0 65px;
+    grid-column-start: 3;
+    grid-row-start: 3; }
+  #people {
+    justify-self: end;
+    align-self: start;
+    margin: 0 20px 0 0;
+    grid-column-start: 1;
+    grid-row-start: 3; } }
