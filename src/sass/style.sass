@@ -14,9 +14,8 @@ $red: #FF5151
 
 body
     background: #EFEFF4
-    display: flex
     flex-direction: column
-    height: 100vh
+    height: auto
 
 a
     transition: opacity 0.15s ease-in-out
@@ -27,7 +26,8 @@ a:hover
     opacity: 0.8
 
 .logo
-    margin: 22px auto 52px
+    display: block
+    margin: 25px auto 50px 
 
 #num-of-gr
     display: flex
@@ -37,6 +37,8 @@ a:hover
     margin: 0 auto 75px
 input
     box-sizing: border-box
+    width: 90%
+    margin: 0 auto
     padding: 18px
     border: 1px solid $gray
     border-radius: 8px
@@ -50,25 +52,27 @@ input
     flex-direction: column
     margin: 0 auto 55px
     input
-        min-width: 315px 
+        min-width: 270px 
     label
         font-size: 20px
-        margin: 0 0 6px 
+        margin: 0 5% 6px 
 .btn
     background: $blue
     font-size: 30px
     color: white
-    margin: 24px auto 0
+    margin: 24px auto 
     padding: 12.5px 0 
-    min-width: 315px 
+    width: 90%
+    min-width: 270px
     text-align: center
     border-radius: 8px
+    cursor: pointer
 
 #people
-    align-self: center
     max-width: 600px
-    margin: 0 0 40px
-
+    width: 90%
+    margin: 0 auto 40px
+    max-width: 400px
     div
         max-width: 600px
         min-width: 320px
@@ -86,6 +90,7 @@ input
             display: flex
             align-items: center
             justify-content: center
+            cursor: pointer
     
 #generate-groups
     display: flex
@@ -93,9 +98,10 @@ input
 
 #groups
     list-style: none
-    margin: 55px auto 40px
+    margin: 55px auto 100px
     max-width: 600px
     min-width: 320px
+    width: 90%
 
     li
         height: auto
@@ -112,6 +118,7 @@ input
                 display: flex
                 align-items: center
                 justify-content: center
+                cursor: pointer
                 img
                     transform: rotate(180deg)
                     transition: transform 0.4s
@@ -136,16 +143,19 @@ input
         display: none
 
 
-@media (min-width: 1024px)
+@media (min-width: 960px)
     body
         display: grid
         grid-template-columns: auto 20% auto
         grid-template-rows: 20% 30% auto
+        height: 100vh
+        width: 80vw
+        margin: 0 auto
     .logo
         margin: 20px auto 0
         grid-column-start: 2
     #add-person-form
-        justify-self: end
+        justify-self: center
         margin: 0 20px 0 0 
         grid-column-start: 1
         grid-row-start: 2
@@ -155,19 +165,21 @@ input
         grid-column-start: 2
         grid-row-start: 2
     #generate-groups
-        margin: 10px 0 0 65px
-        justify-self: start
+        margin: 10px 10px 0 
+        justify-self: center
         grid-column-start: 3
         grid-row-start: 2
     #groups
-        justify-self: start
-        align-self: start        
+        justify-self: center
         max-width: 500px
-        margin: 0 0 0 65px
+        margin: 0 
         grid-column-start: 3
         grid-row-start: 3
+        li
+            margin: 0 20px 15px
+            
     #people
-        justify-self: end
+        justify-self: center
         align-self: start
         margin: 0 20px 0 0 
         grid-column-start: 1

@@ -10,7 +10,7 @@ const people = [];
 let randomPicks = [];
 
 
-window.onload = function(){
+window.onload = function () {
     addBtn.addEventListener('click', addPerson);
     nameForm.addEventListener('submit', addPerson);
     generateBtn.addEventListener('click', generateGroups)
@@ -18,18 +18,18 @@ window.onload = function(){
 
 function addPerson(e) {
     e.preventDefault();
-    if(nameInput.value){ //if value isn't '' it will add it to array
+    if (nameInput.value) { //if value isn't '' it will add it to array
         people.push(nameInput.value)
-    } else{ //else it will add next number
+    } else { //else it will add next number
         people.push(people.length + 1)
     }
     buildPeopleList();
     nameInput.value = '';
 }
 
-function buildPeopleList(e){
-    peopleSection.innerHTML = '';  
-    people.forEach((person)=>{
+function buildPeopleList(e) {
+    peopleSection.innerHTML = '';
+    people.forEach((person) => {
         let newDiv = document.createElement('div');
         let newP = document.createElement('p');
         newP.classList.add('names');
@@ -42,7 +42,7 @@ function buildPeopleList(e){
         peopleSection.appendChild(newDiv);
     });
 
-    document.querySelectorAll('.remove-btn').forEach((btn)=>{
+    document.querySelectorAll('.remove-btn').forEach((btn) => {
         btn.addEventListener('click', removePerson);
     })
 }
@@ -50,7 +50,7 @@ function buildPeopleList(e){
 function removePerson(e) {
     e.preventDefault();
     let value = e.target.parentElement.children[0].innerHTML
-    people.splice(people.findIndex((element)=> element == value), 1)
+    people.splice(people.findIndex((element) => element == value), 1)
     buildPeopleList();
 }
 
@@ -58,24 +58,24 @@ function generateGroups(e) {
     e.preventDefault();
 
     randomPicks = [];
-    if(numInput.value >= 1 && people.length >= numInput.value){
+    if (numInput.value >= 1 && people.length >= numInput.value) {
         let peopleTemp = [...people];
-        for(let l=0; l<numInput.value; l++){
+        for (let l = 0; l < numInput.value; l++) {
             randomPicks.push([]);
         }
-        
+
         let i = 0;
         //randomiser 
-        for(each in people){
+        for (each in people) {
             randomPicks[i].push(peopleTemp.splice(Math.floor(Math.random() * peopleTemp.length), 1)[0]);
             i++;
-            if(i >= numInput.value){
+            if (i >= numInput.value) {
                 i = 0;
             }
         }
         let group_count = 1;
         groupList.innerHTML = '';
-        randomPicks.forEach((group)=>{
+        randomPicks.forEach((group) => {
             let gr = document.createElement('li');
             let groupname = document.createElement('p');
             groupname.innerHTML = `Group ${group_count}`;
@@ -89,10 +89,10 @@ function generateGroups(e) {
 
             let listOfPeople = document.createElement('ul');
             listOfPeople.classList.add('group-parts');
-            group.forEach((person)=>{
+            group.forEach((person) => {
                 let personLi = document.createElement('li');
                 personLi.innerHTML = person;
-                listOfPeople.appendChild(personLi); 
+                listOfPeople.appendChild(personLi);
             })
             gr.appendChild(newDiv);
             gr.appendChild(listOfPeople);
@@ -102,10 +102,10 @@ function generateGroups(e) {
         })
 
         let showPeople = document.querySelectorAll('#groups>li>div>a')
-        showPeople.forEach((each)=>{
-            each.addEventListener('click', switchPeopleVis)  
+        showPeople.forEach((each) => {
+            each.addEventListener('click', switchPeopleVis)
         })
-    } else if(!numInput.value) {
+    } else if (!numInput.value) {
         alert('How many groups do you want?')
     } else {
         alert('Too many groups! Add more peolple or decrease number of groups.')

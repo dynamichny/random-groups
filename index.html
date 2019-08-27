@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="shortcut icon" href="src/img/logo.svg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="shortcut icon" href="src/img/logo.svg" type="image/x-icon" />
     <title>Random Groups</title>
-</head>
-<body>
-    <img src="src/img/logo.svg" alt="Logo" class="logo">
+  </head>
+  <body>
+    <img src="src/img/logo.svg" alt="Logo" class="logo" />
 
     <form id="num-of-gr">
-        <input type="number" placeholder="Number of groups..." min="1">
+      <input type="number" placeholder="Number of groups..." min="1" />
     </form>
 
     <form id="add-person-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Jan Kowalski"  maxlength="18">
-        <a class="btn add-person-btn">Add Person</a>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Jan Kowalski" maxlength="18" />
+      <a class="btn add-person-btn">Add Person</a>
     </form>
 
     <section id="people">
-        <!-- <div>
+      <!-- <div>
             <p class="names">Grant Marshall</p>
             <a class="remove-btn">remove</a>
         </div> -->
     </section>
 
     <form id="generate-groups">
-        <a class="btn">Generate Groups</a>
+      <a class="btn">Generate Groups</a>
     </form>
 
     <ul id="groups"></ul>
 
-
     <script src="src/js/main.js"></script>
-</body>
+  </body>
 </html>
